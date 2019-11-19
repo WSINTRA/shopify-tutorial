@@ -1,0 +1,6 @@
+development:
+  password: f62420d4b0dc485d7dd9983e3cde0636
+  theme_id: "79600746573"
+  store: ws-teststoretheme.myshopify.com
+  ignore_files:
+  - config/settings_data.json

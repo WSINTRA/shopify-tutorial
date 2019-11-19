@@ -1,0 +1,33 @@
+
+<div class="ui menu">
+   {%for link in linklists["main-menu"].links%}  
+       {%if link.links != blank %}
+          <a class="browse item">
+            {{link.title}}
+          <i class="dropdown icon"></i>
+          </a>
+
+             <div class="ui fluid popup top left transition hidden">
+              <div class="ui four column relaxed divided grid">
+                 <div class="column">
+                   {% for childlink in link.links%}
+                      <h4 class="ui header"> {{childlink.title}}</h4>
+                          {% for sublink in childlink.links %}
+                                   <div class="ui link list">
+                                  
+                                   <a class="item"> {{sublink.title}}</a>
+                                   </div>
+                          {% endfor %}
+                   {% endfor %}
+                </div>
+              </div>
+             </div>
+
+       {% endif %}
+            {%if link.links == blank %}
+                <a class="item" href="{{link.url}}">
+                   {{link.title}}
+                </a>
+            {% endif %}
+  {% endfor %} 
+</div>
